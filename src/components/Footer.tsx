@@ -1,150 +1,113 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Hammer, Phone, MapPin, Clock} from 'lucide-react';
+import {Phone, Mail, MapPin} from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="relative min-h-[200px] overflow-hidden text-slate-900 dark:text-white">
-            {/* Sfondo glass con gradienti */}
-            <div className="absolute inset-0 -z-10">
-                <div
-                    className="w-full h-full rounded-3xl bg-gradient-to-br from-amber-100/60 via-white/70 to-slate-200/60 dark:from-slate-900/80 dark:via-slate-950/70 dark:to-slate-900/80 backdrop-blur-2xl border border-amber-200/30 dark:border-slate-700/40 shadow-2xl"/>
-                {/* Decorazioni */}
-                <div
-                    className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-amber-400/30 to-orange-600/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div
-                    className="absolute bottom-0 right-0 w-60 h-60 bg-gradient-to-tr from-slate-400/20 to-amber-300/10 rounded-full blur-2xl pointer-events-none"></div>
-            </div>
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-14">
-                    {/* Company info */}
-                    <div
-                        className="bg-white/80 dark:bg-slate-900/70 backdrop-blur-lg rounded-2xl p-7 border border-amber-200/30 dark:border-slate-700/40 shadow-2xl relative">
-                        <div
-                            className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-xs text-white font-semibold shadow-md border border-white/30 tracking-wide animate-pulse">
-                            25+ anni
+        <footer className="mt-20 w-full bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+            <div className="grid grid-cols-1 md:grid-cols-3 mx-auto max-w-7xl px-6 gap-12 items-start text-left">
+
+                <div className="flex flex-col space-y-4">
+                    <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-xl bg-white/5 border border-white/10 shadow-sm">
+                            <img src="./Logo.png" alt="logo" className="h-10 w-auto object-contain"/>
                         </div>
-                        <div className="flex items-center space-x-3 mb-4">
-                            <div
-                                className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-amber-400/80 to-orange-600/90 rounded-xl shadow-lg border-2 border-amber-300/40 ring-2 ring-amber-200/30">
-                                <Hammer className="h-6 w-6 text-white drop-shadow"/>
-                            </div>
-                            <span
-                                className="text-2xl font-extrabold bg-gradient-to-r from-slate-900 via-amber-700 to-slate-700 dark:from-white dark:via-amber-300 dark:to-slate-300 bg-clip-text text-transparent drop-shadow tracking-tight">
-                                                                   Tecnoserrature Sesto 
-                                                                </span>
-                        </div>
-                        <p className="text-slate-700 dark:text-slate-300 mb-4 font-medium">
-                            Il tuo fabbro di fiducia da oltre 25 anni.<br/>
-                            Professionalità, rapidità e qualità garantita.
-                        </p>
-                        <div className="flex items-center space-x-2 text-amber-500 font-bold">
-                            <Phone className="h-5 w-5"/>
-                            <span>329 937 0481</span>
-                        </div>
+                        <span className="font-extrabold text-xl tracking-tight text-white uppercase">
+                          Tecnoserrature <span
+                            className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Sesto</span>
+                        </span>
                     </div>
-                    {/* Legal Links */}
-                    <div
-                        className="bg-white/80 dark:bg-slate-900/70 backdrop-blur-lg rounded-2xl p-7 border border-amber-200/30 dark:border-slate-700/40 shadow-2xl">
-                        <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                            Informazioni Legali
-                        </h3>
-                        <ul className="space-y-2 text-slate-700 dark:text-slate-300 font-medium">
-                            <li>
-                                <Link to="/privacy-policy"
-                                      className="hover:text-amber-500 transition-colors hover:drop-shadow-glow">
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/terms-of-service"
-                                      className="hover:text-amber-500 transition-colors hover:drop-shadow-glow">
-                                    Termini di Servizio
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/cookie-policy"
-                                      className="hover:text-amber-500 transition-colors hover:drop-shadow-glow">
-                                    Cookie Policy
-                                </Link>
-                            </li>
-                            <li className="pt-2 text-slate-500 dark:text-slate-400 text-sm">P.IVA: 09082580961</li>
-                        </ul>
-                    </div>
-                    {/* Contact & Hours */}
-                    <div
-                        className="bg-white/80 dark:bg-slate-900/70 backdrop-blur-lg rounded-2xl p-7 border border-amber-200/30 dark:border-slate-700/40 shadow-2xl relative">
-                        <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                            Contatti & Orari
-                        </h3>
-                        <div className="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
-                            <div className="flex items-center space-x-2">
-                                <Phone className="h-5 w-5"/>
-                                <span>+39 329 937 0481</span>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <MapPin className="h-5 w-5"/>
-                                <span>Sesto San Giovanni,</span>
-                                <span>Dintorni</span>
-                            </div>
-                            <div className="flex items-start space-x-2">
-                                <Clock className="h-5 w-5 mt-1"/>
-                                <div>
-                                    <p>Dal lunedì al venerdì: 7:00 - 20:00</p>
-                                    <p>Sabato: 8:00 - 14:00</p>
-                                    <p>Domenica: 9:00 - 20:00</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start space-x-2">
-                                <MapPin className="h-5 w-5"/>
-                                <p>Sede legale: Via Gran Paradiso, 4, Brugherio, MB, 20861</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Bloccati fuori casa? Chiave spezzata o serratura bloccata? Interventi rapidi a Sesto San
+                        Giovanni e comuni limitrofi. Massima trasparenza e prezzi onesti.
+                    </p>
                 </div>
-                {/* Bottom section */}
-                <div className="border-t border-amber-200/30 dark:border-slate-700/40 py-6 mt-2">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <div className="text-slate-500 dark:text-slate-400 text-sm text-center md:text-left">
-                            © {new Date().getFullYear()} Tecnoserrature Sesto. Tutti i diritti riservati.
-                            <p>
-                                Sviluppato da{' '}
-                                <a
-                                    href="https://stackhorizon.it"
-                                    target="_blank"
-                                    className="text-amber-500 hover:text-amber-400 hover:drop-shadow-glow transition-colors font-bold"
-                                    rel="noopener noreferrer"
-                                >
-                                    StackHorizon
-                                </a>
-                            </p>
-                        </div>
-                        <div className="text-slate-500 dark:text-slate-400 text-sm text-center md:text-right space-x-2">
-                            <a href="/"
-                               className="hover:text-amber-500 hover:drop-shadow-glow transition-colors font-bold">
-                                Home
+
+                <div className="flex flex-col space-y-4">
+                    <h4 className="text-white font-bold uppercase tracking-wider text-xs tracking-widest text-amber-500">
+                        Legale
+                    </h4>
+                    <ul className="text-slate-400 text-sm space-y-3">
+                        <li>
+                            <a href="/cookie-policy"
+                               className="hover:text-white transition-colors flex items-center gap-2 group">
+                                <span
+                                    className="h-1 w-1 rounded-full bg-amber-500 group-hover:scale-125 transition-transform"></span>
+                                Cookie Policy
                             </a>
-                            |
-                            <Link to="/privacy-policy"
-                                  className="hover:text-amber-500 hover:drop-shadow-glow transition-colors font-bold">
-                                Privacy
-                            </Link>
-                            |
-                            <Link to="/terms-of-service"
-                                  className="hover:text-amber-500 hover:drop-shadow-glow transition-colors font-bold">
-                                Termini
-                            </Link>
-                            |
-                            <Link to="/cookie-policy"
-                                  className="hover:text-amber-500 hover:drop-shadow-glow transition-colors font-bold">
-                                Cookie
-                            </Link>
+                        </li>
+                        <li>
+                            <a href="/privacy-policy"
+                               className="hover:text-white transition-colors flex items-center gap-2 group">
+                                <span
+                                    className="h-1 w-1 rounded-full bg-amber-500 group-hover:scale-125 transition-transform"></span>
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/terms-of-service"
+                               className="hover:text-white transition-colors flex items-center gap-2 group">
+                                <span
+                                    className="h-1 w-1 rounded-full bg-amber-500 group-hover:scale-125 transition-transform"></span>
+                                Termini e condizioni
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="flex flex-col space-y-4">
+                    <h4 className="text-white font-bold uppercase tracking-wider text-xs tracking-widest text-amber-500">
+                        Contatti & Sede
+                    </h4>
+
+                    <a
+                        className="text-sm hover:text-white transition-colors flex items-center gap-3 text-slate-300 group"
+                        href="tel:+393299370481"
+                    >
+                        <div
+                            className="p-2 rounded-lg bg-amber-500/10 text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                            <Phone className="w-4 h-4 shrink-0"/>
                         </div>
-                        <div className="text-slate-500 dark:text-slate-400 text-sm text-center md:text-right">
+                        <span className="font-medium">+39 329 937 0481</span>
+                    </a>
+
+                    <a
+                        className="text-sm hover:text-white transition-colors flex items-center gap-3 text-slate-300 group break-all"
+                        href="mailto:info@tecnoserraturesesto.it"
+                    >
+                        <div
+                            className="p-2 rounded-lg bg-amber-500/10 text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                            <Mail className="w-4 h-4 shrink-0"/>
+                        </div>
+                        <span className="font-medium">info@tecnoserraturesesto.it</span>
+                    </a>
+
+                    <div className="text-sm flex items-start gap-3">
+                        <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0 mt-0.5">
+                            <MapPin className="w-4 h-4"/>
+                        </div>
+                        <span
+                            className="leading-tight pt-1">Sede legale: Via Gran Paradiso, 4, Brugherio, MB, 20861</span>
+                    </div>
+
+                    <div className="pt-2">
+                        <span
+                            className="inline-block px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-slate-400">
                             P.IVA: 09082580961
-                        </div>
+                        </span>
                     </div>
                 </div>
+
+            </div>
+
+            <div
+                className="mt-16 pt-8 border-t border-slate-800/80 text-center flex flex-col sm:flex-row items-center justify-between max-w-7xl mx-auto px-6 gap-4 text-xs text-slate-500">
+                <p>
+                    © {new Date().getFullYear()} Tecnoserrature Sesto. All rights reserved.
+                </p>
+                <p>
+                    Developed by <a href="https://cirostrazzullo.it" target="_blank" rel="noopener noreferrer"
+                                    className="text-slate-300 hover:text-amber-400 transition-colors font-medium underline underline-offset-4 decoration-amber-500/50">cirostrazzullo.it</a>
+                </p>
             </div>
         </footer>
     );
