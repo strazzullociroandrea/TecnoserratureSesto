@@ -1,304 +1,240 @@
-import { Building, Hammer, IdCard, MapPin, Phone } from "lucide-react";
+"use client";
+
+import {Building, Hammer, IdCard, MapPin, Phone, Shield, FileText, AlertTriangle, MoveLeft} from "lucide-react";
 import React from "react";
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
+import {GoToUp} from "@/components/go-to-up";
+import {Button} from "@/components/ui/button";
 
 const TermsOfService = () => {
-	return (
-		<div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-all duration-500">
-			{/* Header */}
-			<header className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm text-slate-900 dark:text-white sticky top-0 z-50 shadow-lg border-b border-slate-200/50 dark:border-slate-700/50">
-				<div className="container mx-auto px-4">
-					<div className="flex items-center justify-between h-16">
-						<div className="flex items-center space-x-3">
-							<div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl shadow-lg">
-								<Hammer className="h-6 w-6 text-white" />
-							</div>
-							<div>
-								<span className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-									Tecnoserrature Sesto
-								</span>
-							</div>
-						</div>
+    const handleBackClick = () => {
+        history.back();
+    };
 
-						<div className="flex items-center space-x-4">
-							<a
-								href="/"
-								className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-105"
-							>
-								← Torna alla Home
-							</a>
-						</div>
-					</div>
-				</div>
-			</header>
+    return (
+        <div
+            className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+            <GoToUp/>
+            <Header/>
 
-			{/* Main Content */}
-			<main className="py-24 bg-gradient-to-br from-white to-gray-50 dark:from-slate-900 dark:to-slate-950">
-				<div className="container mx-auto px-4">
-					{/* Title Section */}
-					<div className="text-center mb-20">
-						<h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-6">
-							Termini e{" "}
-							<span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-								Condizioni
-							</span>
-						</h1>
-						<p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-							Benvenuto sul nostro sito web. Ti invitiamo a leggere attentamente
-							questi Termini e Condizioni prima di utilizzare i nostri servizi
-							professionali
-						</p>
-						<div className="mt-8 inline-block px-6 py-3 bg-amber-50 dark:bg-amber-950/20 rounded-lg border border-amber-200 dark:border-amber-800">
-							<span className="text-sm text-amber-700 dark:text-amber-300 font-semibold">
-								Ultimo aggiornamento: 24 settembre 2025
-							</span>
-						</div>
-					</div>
+            <main className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <Button
+                    variant="outline"
+                    className="mb-8 rounded-xl"
+                    onClick={handleBackClick}
+                >
+                    <MoveLeft className="w-4 h-4"/>
+                    Indietro
+                </Button>
 
-					{/* Content Sections */}
-					<div className="max-w-6xl mx-auto">
-						{/* Accettazione dei Termini */}
-						<section className="mb-16">
-							<div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-								<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-									<span className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
-										<span className="text-white text-xl">✅</span>
-									</span>
-									Accettazione dei Termini
-								</h2>
-								<div className="space-y-4 text-slate-700 dark:text-slate-300">
-									<p className="leading-relaxed">
-										Accedendo e utilizzando i servizi di{" "}
-										<strong>Tecnoserrature Sesto</strong>, accetti i
-										seguenti Termini e Condizioni. Se non sei d'accordo con
-										queste condizioni, ti invitiamo a non utilizzare il nostro
-										sito web.
-									</p>
-									<p className="leading-relaxed">
-										L'utilizzo dei nostri servizi implica l'accettazione
-										integrale di tutti i termini e condizioni qui riportati,
-										incluse le politiche di privacy e cookie.
-									</p>
-								</div>
-							</div>
-						</section>
+                <div className="text-center mb-16">
+                    <div
+                        className="inline-flex items-center justify-center p-3 bg-amber-100 dark:bg-amber-950/50 rounded-2xl text-amber-600 dark:text-amber-400 mb-4 shadow-sm">
+                        <FileText className="w-8 h-8"/>
+                    </div>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
+                        Termini e <span
+                        className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Condizioni</span>
+                    </h1>
+                    <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+                        Benvenuto sul nostro sito web. Ti invitiamo a leggere attentamente questi Termini e Condizioni
+                        prima di utilizzare i nostri servizi professionali.
+                    </p>
+                    <div
+                        className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-slate-200/60 dark:bg-slate-800/60 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-400">
+                        <span>Ultimo aggiornamento: 22 settembre 2026</span>
+                    </div>
+                </div>
 
-						{/* Modifiche ai Termini */}
-						<section className="mb-16">
-							<div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-								<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-									<span className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-										<span className="text-white text-xl">🔄</span>
-									</span>
-									Modifiche ai Termini
-								</h2>
-								<div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 p-6 rounded-xl border border-amber-200 dark:border-amber-800">
-									<div className="space-y-4 text-slate-700 dark:text-slate-300">
-										<p className="leading-relaxed">
-											<strong>Tecnoserrature Sesto</strong> si riserva il diritto di
-											modificare questi Termini e Condizioni in qualsiasi
-											momento per adeguarli alle normative vigenti o ai
-											cambiamenti dei servizi offerti.
-										</p>
-										<p className="leading-relaxed">
-											Le modifiche saranno pubblicate su questa pagina e
-											diventeranno effettive immediatamente dopo la
-											pubblicazione. Ti invitiamo a verificare periodicamente
-											questa pagina per restare aggiornato sulle eventuali
-											modifiche.
-										</p>
-									</div>
-								</div>
-							</div>
-						</section>
+                <div className="space-y-12 p-4">
+                    <section
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div
+                            className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                            <div
+                                className="p-2.5 bg-blue-50 dark:bg-blue-950/40 rounded-xl text-blue-600 dark:text-blue-400">
+                                <Shield className="w-6 h-6"/>
+                            </div>
+                            <h2 className="text-xl font-bold">1. Accettazione dei Termini</h2>
+                        </div>
+                        <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p>
+                                Accedendo e utilizzando i servizi di <strong>Tecnoserrature Sesto</strong>, accetti i
+                                seguenti Termini e Condizioni. Se non sei d'accordo con queste condizioni, ti invitiamo
+                                a non utilizzare il nostro sito web.
+                            </p>
+                            <p>
+                                L'utilizzo dei nostri servizi implica l'accettazione integrale di tutti i termini e
+                                condizioni qui riportati, incluse le politiche di privacy e cookie.
+                            </p>
+                        </div>
+                    </section>
 
-						{/* Uso del Sito */}
-						<section className="mb-16">
-							<div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-								<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-									<span className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
-										<span className="text-white text-xl">🌐</span>
-									</span>
-									Uso del Sito
-								</h2>
-								<div className="grid md:grid-cols-2 gap-6">
-									<div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 p-6 rounded-xl border border-green-200 dark:border-green-800">
-										<h3 className="text-xl font-semibold text-green-800 dark:text-green-300 mb-4">
-											✅ Uso Consentito
-										</h3>
-										<ul className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
-											<li>• Consultazione delle informazioni sui servizi</li>
-											<li>• Richiesta di preventivi e appuntamenti</li>
-											<li>• Contatto per assistenza fabbro</li>
-											<li>• Utilizzo conforme alle leggi applicabili</li>
-										</ul>
-									</div>
-									<div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/30 dark:to-red-900/30 p-6 rounded-xl border border-red-200 dark:border-red-800">
-										<h3 className="text-xl font-semibold text-red-800 dark:text-red-300 mb-4">
-											❌ Uso Vietato
-										</h3>
-										<ul className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
-											<li>
-												• Violazione dei diritti di proprietà intellettuale
-											</li>
-											<li>• Utilizzo per scopi illeciti o fraudolenti</li>
-											<li>• Invio di contenuti offensivi o spam</li>
-											<li>• Tentativi di compromettere la sicurezza</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</section>
+                    <section
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div
+                            className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                            <div
+                                className="p-2.5 bg-amber-50 dark:bg-amber-950/40 rounded-xl text-amber-600 dark:text-amber-400">
+                                <FileText className="w-6 h-6"/>
+                            </div>
+                            <h2 className="text-xl font-bold">2. Modifiche ai Termini</h2>
+                        </div>
+                        <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p>
+                                <strong>Tecnoserrature Sesto</strong> si riserva il diritto di modificare questi Termini
+                                e Condizioni in qualsiasi momento per adeguarli alle normative vigenti o ai cambiamenti
+                                dei servizi offerti.
+                            </p>
+                            <p>
+                                Le modifiche saranno pubblicate su questa pagina e diventeranno effettive immediatamente
+                                dopo la pubblicazione. Ti invitiamo a verificare periodicamente questa pagina per
+                                restare aggiornato sulle eventuali modifiche.
+                            </p>
+                        </div>
+                    </section>
 
-						{/* Proprietà Intellettuale */}
-						<section className="mb-16">
-							<div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-								<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-									<span className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-										<span className="text-white text-xl">©️</span>
-									</span>
-									Proprietà Intellettuale
-								</h2>
-								<div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
-									<div className="space-y-4 text-slate-700 dark:text-slate-300">
-										<p className="leading-relaxed">
-											Tutti i contenuti del sito web di{" "}
-											<strong>Tecnoserrature Sesto</strong> sono di proprietà
-											dell'azienda.
-										</p>
-										<p className="leading-relaxed">
-											<strong>
-												È vietata la riproduzione, distribuzione o utilizzo non
-												autorizzato di qualsiasi materiale presente sul sito.
-											</strong>
-										</p>
-									</div>
-								</div>
-							</div>
-						</section>
+                    <section
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div
+                            className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                            <div
+                                className="p-2.5 bg-green-50 dark:bg-green-950/40 rounded-xl text-green-600 dark:text-green-400">
+                                <Building className="w-6 h-6"/>
+                            </div>
+                            <h2 className="text-xl font-bold">3. Uso del Sito</h2>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-300">
+                            <div
+                                className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">✅ Uso Consentito</h3>
+                                <ul className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                    <li>• Consultazione delle informazioni sui servizi</li>
+                                    <li>• Richiesta di preventivi e appuntamenti</li>
+                                    <li>• Contatto per assistenza fabbro</li>
+                                    <li>• Utilizzo conforme alle leggi applicabili</li>
+                                </ul>
+                            </div>
+                            <div
+                                className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">❌ Uso Vietato</h3>
+                                <ul className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                    <li>• Violazione dei diritti di proprietà intellettuale</li>
+                                    <li>• Utilizzo per scopi illeciti o fraudolenti</li>
+                                    <li>• Invio di contenuti offensivi o spam</li>
+                                    <li>• Tentativi di compromettere la sicurezza</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
 
-						{/* Limitazione di Responsabilità */}
-						<section className="mb-16">
-							<div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-								<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-									<span className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
-										<span className="text-white text-xl">⚠️</span>
-									</span>
-									Limitazione di Responsabilità
-								</h2>
-								<div className="grid md:grid-cols-2 gap-6">
-									<div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/30 dark:to-red-900/30 p-6 rounded-xl border border-red-200 dark:border-red-800">
-										<h3 className="text-lg font-semibold text-red-800 dark:text-red-300 mb-3">
-											🚫 Esclusioni
-										</h3>
-										<ul className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
-											<li>• Danni indiretti o consequenziali</li>
-											<li>• Perdita di dati o interruzione del servizio</li>
-											<li>• Problemi tecnici del sito web</li>
-											<li>• Utilizzo improprio delle informazioni</li>
-										</ul>
-									</div>
-									<div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
-										<h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-3">
-											📋 Limitazioni
-										</h3>
-										<p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-											<strong>Tecnoserrature Sesto</strong> non sarà
-											responsabile per danni diretti, indiretti, incidentali,
-											speciali o consequenziali derivanti dall'uso del sito web,
-											fatta salva la responsabilità per i servizi di fabbro
-											effettivamente prestati.
-										</p>
-									</div>
-								</div>
-							</div>
-						</section>
+                    <section
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div
+                            className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                            <div
+                                className="p-2.5 bg-purple-50 dark:bg-purple-950/40 rounded-xl text-purple-600 dark:text-purple-400">
+                                <Shield className="w-6 h-6"/>
+                            </div>
+                            <h2 className="text-xl font-bold">4. Proprietà Intellettuale</h2>
+                        </div>
+                        <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p>
+                                Tutti i contenuti del sito web di <strong>Tecnoserrature Sesto</strong> sono protetti
+                                dalle leggi sul diritto d'autore. È vietata la riproduzione, distribuzione o utilizzo
+                                non autorizzato di qualsiasi materiale presente sul sito.
+                            </p>
+                        </div>
+                    </section>
 
-						{/* Contatti */}
-						<section className="mb-16">
-							<div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-								<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-									<span className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-										<Phone className="h-6 w-6 text-white" />
-									</span>
-									Contatti
-								</h2>
-								<div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 p-6 rounded-xl border border-amber-200 dark:border-amber-800">
-									<div className="text-center mb-6">
-										<h3 className="text-xl font-semibold text-amber-800 dark:text-amber-300 mb-4">
-											Per qualsiasi domanda sui Termini e Condizioni
-										</h3>
-										<div className="inline-block bg-white dark:bg-slate-700 px-6 py-4 rounded-xl border border-amber-200 dark:border-amber-700 shadow-lg">
-											<div className="flex items-center justify-center space-x-3">
-												<Phone className="h-8 w-8 text-amber-600" />
-												<div className="text-left">
-													<div className="text-sm text-slate-600 dark:text-slate-400">
-														Contattaci:
-													</div>
-													<a
-														href="tel:3299370481"
-														className="text-xl font-bold text-amber-600 dark:text-amber-400 hover:underline"
-													>
-                                                        329 937 0481
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
+                    <section
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div
+                            className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                            <div
+                                className="p-2.5 bg-red-50 dark:bg-red-950/40 rounded-xl text-red-600 dark:text-red-400">
+                                <AlertTriangle className="w-6 h-6"/>
+                            </div>
+                            <h2 className="text-xl font-bold">5. Limitazione di Responsabilità</h2>
+                        </div>
+                        <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p>
+                                <strong>Tecnoserrature Sesto</strong> non sarà responsabile per danni diretti,
+                                indiretti, incidentali o consequenziali derivanti dall'uso del sito web, fatta salva la
+                                responsabilità per i servizi di fabbro effettivamente prestati sul campo.
+                            </p>
+                        </div>
+                    </section>
 
-									<div className="grid md:grid-cols-2 gap-6">
-										<div className="space-y-3">
-											<div className="flex items-center space-x-3">
-												<Building className="h-6 w-6 text-amber-600" />
-												<span className="font-semibold text-slate-800 dark:text-slate-200">
-													Tecnoserrature Sesto
-												</span>
-											</div>
-											<div className="flex items-start space-x-3">
-												<MapPin className="h-6 w-6 text-amber-600 mt-1" />
-												<div>
-													<div className="font-semibold text-slate-800 dark:text-slate-200">
-														Sede:
-													</div>
-													<div className="text-slate-600 dark:text-slate-400">
-														Via Gran Paradiso, 4<br />
-														Brugherio (MB) 20861
-													</div>
-												</div>
-											</div>
-											<div className="flex items-center space-x-3">
-												<IdCard className="h-6 w-6 text-amber-600" />
-												<div>
-													<div className="font-semibold text-slate-800 dark:text-slate-200">
-														P.IVA:
-													</div>
-													<div className="text-slate-600 dark:text-slate-400">
-														09082580961
-													</div>
-												</div>
-											</div>
-										</div>
+                    <section
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div
+                            className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                            <div
+                                className="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 rounded-xl text-emerald-600 dark:text-emerald-400">
+                                <Phone className="w-6 h-6"/>
+                            </div>
+                            <h2 className="text-xl font-bold">6. Contatti e Riferimenti del Titolare</h2>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-6 text-sm text-slate-600 dark:text-slate-300">
+                            <div className="space-y-3">
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Ragione
+                                        Sociale:</strong>
+                                    <span className="block font-medium text-slate-900 dark:text-white">Tecnoserrature Sesto</span>
+                                    <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                                        Tecnoserrature Sesto è un marchio di proprietà di Luciano, P.IVA 09082580961
+                                    </span>
+                                </div>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Sede
+                                        Operativa:</strong>
+                                    <span>Via Gran Paradiso, 4 - Brugherio (MB) 20861</span>
+                                </div>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Partita IVA:</strong>
+                                    <span>09082580961</span>
+                                </div>
+                            </div>
+                            <div className="space-y-3">
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Contatto
+                                        Telefonico:</strong>
+                                    <a href="tel:3299370481"
+                                       className="text-blue-600 dark:text-blue-400 font-medium hover:underline">329 937
+                                        0481</a>
+                                </div>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Indirizzo
+                                        Email:</strong>
+                                    <a href="mailto:info@tecnoserraturesesto.it"
+                                       className="text-blue-600 dark:text-blue-400 font-medium hover:underline">info@tecnoserraturesesto.it</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-										<div className="bg-white dark:bg-slate-700 p-4 rounded-xl border border-amber-200 dark:border-amber-700">
-											<p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-												Per chiarimenti sui termini e condizioni, reclami o
-												segnalazioni, contattaci durante gli orari di servizio.
-												Il nostro team è a disposizione per rispondere a ogni
-												tua domanda.
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-			</main>
+                    <section
+                        className="bg-slate-100 dark:bg-slate-900/50 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-4">
+                        <div
+                            className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-bold uppercase tracking-wider">
+                            <AlertTriangle className="w-4 h-4 text-amber-500"/> Note Legali e Responsabilità Tecnica
+                        </div>
+                        <p>
+                            Il Webmaster fornisce esclusivamente il supporto tecnico, la gestione dello spazio server e
+                            del nome a dominio. Il Webmaster non è in alcun modo responsabile dei contenuti pubblicati,
+                            delle informazioni commerciali o delle trattative intercorse tra gli utenti e la
+                            società <strong>Tecnoserrature Sesto</strong>, restando quest'ultima l'unica responsabile
+                            per i contenuti del sito e l'erogazione dei servizi.
+                        </p>
+                    </section>
+                </div>
+            </main>
 
-			<Footer />
-		</div>
-	);
+            <Footer/>
+        </div>
+    );
 };
 
 export default TermsOfService;
