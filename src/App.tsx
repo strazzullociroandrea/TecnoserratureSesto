@@ -28,8 +28,9 @@ const App = () => (
                             <Route path="/cookie-policy" element={<CookiePolicy/>}/>
                             <Route path="*" element={<NotFound/>}/>
                         </Routes>
-                        <CookieBanner/>
                     </div>
+                    <CookieBanner/>
+
                 </BrowserRouter>
             </TooltipProvider>
         </ThemeProvider>

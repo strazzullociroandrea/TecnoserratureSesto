@@ -1,49 +1,81 @@
-import React, { useState, useEffect } from "react";
-import { ShieldCheck } from "lucide-react";
+'use client'
 
-const COOKIE_KEY = "cookieConsent";
+import {useState, useEffect} from 'react'
 
-const CookieBanner = () => {
-  const [visible, setVisible] = useState(false);
+const STORAGE_KEY = 'tecno-serrature-sesto-cookie-consent'
 
-  useEffect(() => {
-    const consent = localStorage.getItem(COOKIE_KEY);
-    if (!consent) setVisible(true);
-  }, []);
-  const acceptCookies = () => {
-    localStorage.setItem(COOKIE_KEY, "accepted");
-    setVisible(false);
-  };
+function CookieBanner() {
+    const [status, setStatus] = useState<'accepted' | 'rejected' | null>(null)
+    const [isMounted, setIsMounted] = useState(false)
 
-  if (!visible) return null;
+    useEffect(() => {
+        setIsMounted(true)
+        const saved = window.localStorage.getItem(STORAGE_KEY)
+        if (saved === 'accepted' || saved === 'rejected') {
+            setStatus(saved as 'accepted' | 'rejected')
+        }
+    }, [])
 
-  return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95vw] max-w-xl px-6 py-5 bg-gradient-to-br from-amber-100 via-white to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border border-amber-200/40 dark:border-slate-700/40 rounded-2xl shadow-2xl flex items-center justify-between gap-4 animate-fade-in">
-      <div className="flex items-center gap-3">
-        <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl shadow-lg border border-amber-300/40">
-          <ShieldCheck className="h-6 w-6 text-white" />
+    const handleChoice = (value: 'accepted' | 'rejected') => {
+        window.localStorage.setItem(STORAGE_KEY, value)
+        setStatus(value)
+    }
+
+    if (!isMounted) return null
+
+    if (status) {
+        return (
+            <div className="fixed bottom-0 right-4 z-[9999]">
+                <button
+                    onClick={() => setStatus(null)}
+                    className="rounded-t-2xl translate-y-2/3 hover:translate-y-0 cursor-pointer bg-slate-950/90 backdrop-blur-md border border-slate-800 px-4 py-2 text-xs font-medium text-slate-300 shadow-2xl transition-all hover:bg-slate-900 hover:text-white"
+                >
+                    🍪 Gestione Cookie
+                </button>
+            </div>
+        )
+    }
+
+    return (
+        <div className="fixed inset-x-0 bottom-6 z-[9999] px-4 sm:px-6 lg:px-8">
+            <div
+                className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-slate-700/80 bg-slate-950/95 p-1 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+                <button
+                    onClick={() => handleChoice('rejected')}
+                    aria-label="Chiudi banner"
+                    className="cursor-pointer absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+                >
+                    ✕
+                </button>
+
+                <div className="flex flex-col items-center gap-6 p-6 sm:flex-row sm:justify-between sm:p-8">
+                    <div className="space-y-2 text-center sm:text-left pr-4">
+                        <h3 className="text-lg font-bold tracking-tight text-white flex items-center justify-center sm:justify-start gap-2">
+                            🍪 Informativa Cookie
+                        </h3>
+                        <p className="max-w-xl text-[13px] leading-relaxed text-slate-300">
+                            Utilizziamo cookie tecnici essenziali e strumenti statistici anonimi per ottimizzare la tua
+                            esperienza.
+                        </p>
+                    </div>
+                    <div className="flex w-full flex-col-reverse gap-3 sm:w-auto sm:flex-row sm:items-center">
+                        <button
+                            onClick={() => handleChoice('rejected')}
+                            className="cursor-pointer rounded-2xl border border-slate-700/80 bg-slate-900 px-6 py-3 text-[13px] font-semibold text-slate-300 transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 active:scale-95"
+                        >
+                            Rifiuta
+                        </button>
+                        <button
+                            onClick={() => handleChoice('accepted')}
+                            className="cursor-pointer rounded-2xl bg-gradient-to-r from-amber-600 to-orange-600 px-7 py-3 text-[13px] font-bold text-white shadow-lg shadow-orange-950/40 transition-all hover:from-amber-500 hover:to-orange-500 hover:scale-[1.02] active:scale-95"
+                        >
+                            Accetta
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <span className="text-base font-semibold text-slate-900 dark:text-white">
-            Utilizziamo i cookie per migliorare la tua esperienza.
-          </span>
-          <br />
-          <a
-            href="/cookie-policy"
-            className="text-amber-600 dark:text-amber-400 underline font-bold hover:text-orange-600 transition-colors"
-          >
-            Cookie Policy
-          </a>
-        </div>
-      </div>
-      <button
-        onClick={acceptCookies}
-        className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold px-5 py-2 rounded-xl shadow transition-all border border-amber-300/40"
-      >
-        Accetta
-      </button>
-    </div>
-  );
-};
+    )
+}
 
 export default CookieBanner;
