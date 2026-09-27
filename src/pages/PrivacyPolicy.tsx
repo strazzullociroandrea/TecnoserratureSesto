@@ -76,8 +76,8 @@ const PrivacyPolicy = () => {
                                     </span>
                                 </div>
                                 <div>
-                                    <strong className="text-slate-900 dark:text-white block mb-1">Sede Operativa:</strong>
-                                    <span>Via Gran Paradiso, 4 - Brugherio (MB) 20861</span>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Sede Legale:</strong>
+                                    <span>Via Crispi Francesco, 6 – 20900 MONZA</span>
                                 </div>
                                 <div>
                                     <strong className="text-slate-900 dark:text-white block mb-1">Partita IVA:</strong>
