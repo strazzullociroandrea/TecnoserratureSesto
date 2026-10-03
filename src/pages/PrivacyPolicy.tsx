@@ -69,7 +69,8 @@ const PrivacyPolicy = () => {
                         <div className="grid sm:grid-cols-2 gap-6 text-sm text-slate-600 dark:text-slate-300">
                             <div className="space-y-3">
                                 <div>
-                                    <strong className="text-slate-900 dark:text-white block mb-1">Ragione Sociale:</strong>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Ragione
+                                        Sociale:</strong>
                                     <span className="block font-medium text-slate-900 dark:text-white">Tecnoserrature Sesto</span>
                                     <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                                         Tecnoserrature Sesto è un marchio di proprietà di Luciano, P.IVA 09082580961
@@ -77,7 +78,7 @@ const PrivacyPolicy = () => {
                                 </div>
                                 <div>
                                     <strong className="text-slate-900 dark:text-white block mb-1">Sede Legale:</strong>
-                                    <span>Via Crispi Francesco, 6 – 20900 MONZA</span>
+                                    <span>Via Gran Paradiso 4, Brugherio</span>
                                 </div>
                                 <div>
                                     <strong className="text-slate-900 dark:text-white block mb-1">Partita IVA:</strong>
@@ -86,12 +87,15 @@ const PrivacyPolicy = () => {
                             </div>
                             <div className="space-y-3">
                                 <div>
-                                    <strong className="text-slate-900 dark:text-white block mb-1">Contatto Telefonico:</strong>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Contatto
+                                        Telefonico:</strong>
                                     <a href="tel:3299370481"
-                                       className="text-blue-600 dark:text-blue-400 font-medium hover:underline">329 937 0481</a>
+                                       className="text-blue-600 dark:text-blue-400 font-medium hover:underline">329 937
+                                        0481</a>
                                 </div>
                                 <div>
-                                    <strong className="text-slate-900 dark:text-white block mb-1">Indirizzo Email:</strong>
+                                    <strong className="text-slate-900 dark:text-white block mb-1">Indirizzo
+                                        Email:</strong>
                                     <a href="mailto:info@tecnoserraturesesto.it"
                                        className="text-blue-600 dark:text-blue-400 font-medium hover:underline">info@tecnoserraturesesto.it</a>
                                 </div>
@@ -164,7 +168,8 @@ const PrivacyPolicy = () => {
                                     <span className="text-xs text-slate-500 dark:text-slate-400">Memorizzazione locale della scelta effettuata dall'utente sul banner cookie. Non è un cookie e non trasmette dati a terzi.</span>
                                 </li>
                                 <li className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-                                    <strong className="block text-slate-900 dark:text-white mb-1">Log tecnici del server</strong>
+                                    <strong className="block text-slate-900 dark:text-white mb-1">Log tecnici del
+                                        server</strong>
                                     <span className="text-xs text-slate-500 dark:text-slate-400">Il provider di hosting può trattare indirizzo IP, data e ora della richiesta e dati tecnici per sicurezza, manutenzione e funzionamento del servizio.</span>
                                 </li>
                             </ul>

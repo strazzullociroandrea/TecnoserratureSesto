@@ -86,7 +86,7 @@ const Footer = () => {
                             <MapPin className="w-4 h-4"/>
                         </div>
                         <span
-                            className="leading-tight pt-1">Sede legale: Via Crispi Francesco, 6 – 20900 MONZA</span>
+                            className="leading-tight pt-1">Sede legale: Via Gran Paradiso 4, Brugherio</span>
                     </div>
 
                     <div className="pt-2">
