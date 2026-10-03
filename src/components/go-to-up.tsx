@@ -26,7 +26,7 @@ export function GoToUp() {
         <div className={`fixed bottom-10 right-7 z-50 ${isVisible ? 'block' : 'hidden'}`}>
             <button
                 onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-                aria-label="Torna a inizio pagina"
+                aria-label="Torna a inizio pagina."
                 className="cursor-pointer flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white shadow-lg transition-all duration-300 hover:-translate-y-1 active:scale-95"
             >
                 <ChevronUp size={24} className="stroke-[1.5]"/>
