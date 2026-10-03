@@ -89,11 +89,16 @@ const Footer = () => {
                             className="leading-tight pt-1">Sede legale: Via Gran Paradiso 4, Brugherio</span>
                     </div>
 
-                    <div className="pt-2">
-                        <span
-                            className="inline-block px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-slate-400">
-                            P.IVA: 09082580961
-                        </span>
+                    <div className="pt-2 flex flex-col space-y-2">
+                        <p className="text-xs text-slate-400 leading-snug">
+                            Tecnoserrature Sesto è un marchio di proprietà di Luciano
+                        </p>
+                        <div>
+                            <span
+                                className="inline-block px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-slate-400">
+                                P.IVA: 09082580961
+                            </span>
+                        </div>
                     </div>
                 </div>
 
